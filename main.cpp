@@ -80,3 +80,52 @@ int main(int argc, char const *argv[]) {
     // Load data into the appointments vector
 
 }
+
+AdventureGame::AdventureGame() {
+
+}
+AdventureGame::AdventureGame(string name) {
+
+}
+
+Player AdventureGame::getPlayer() {
+
+}
+int AdventureGame::getRoomNumber() {
+
+}
+Room AdventureGame::getCurrentRoom() {
+
+}
+
+void AdventureGame::setPlayer(string name) {
+
+}
+Chest AdventureGame::getChest() {
+
+}
+void AdventureGame::generateRoom() {
+
+}
+void AdventureGame::moveForward() {
+
+}
+void AdventureGame::useObject() {
+
+}
+void AdventureGame::roomInteraction() {
+
+}
+void AdventureGame::wait() {
+
+}
+
+void AdventureGame::printNotice() {
+
+}
+void AdventureGame::printInventory() {
+
+}
+void AdventureGame::printHelp() {
+    
+}
