@@ -31,49 +31,49 @@ struct Potion {
 };
 
 struct Chest {
-Potion p;
-int coinCount;
+    Potion p;
+    int coinCount;
 };
 
 struct Player {
-string name;
-vector <Potion> inventory;
-int health;
-int strength;
-Weapon w;
-int coinCount;
+    string name;
+    vector <Potion> inventory;
+    int health;
+    int strength;
+    Weapon w;
+    int coinCount;
 };
 
 struct Room {
-Monster m;
-Chest c;
+    Monster m;
+    Chest c;
 };
 
 class AdventureGame {
 public:
-Player getPlayer();
-int getRoomNumber();
-Room getCurrentRoom();
-void setPlayer(string name);
+    AdventureGame();
+    AdventureGame(string name);
 
+    Player getPlayer();
+    int getRoomNumber();
+    Room getCurrentRoom();
+    void setPlayer(string name);
 
+    Chest getChest();
+    void generateRoom();
+    void moveForward();
+    void useObject();
+    void roomInteraction();
+    void wait();
 
-
-Chest getChest();
-void generateRoom();
-void moveForward();
-void useObject();
-void roomInteraction();
-void wait();
-
-void printNotice();
-void printInventory();
-void printHelp();
+    void printNotice();
+    void printInventory();
+    void printHelp();
 
 private:
-Player p;
-int roomNumber;
-Room currentRoom;
+    Player p;
+    int roomNumber;
+    Room currentRoom;
 };
 
 int main(int argc, char const *argv[]) {
