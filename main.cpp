@@ -81,14 +81,14 @@ int main(int argc, char const *argv[]) {
 
 }
 
-AdventureGame::AdventureGame() {
+AdventureGame::AdventureGame() {    // Victoria
 
 }
 AdventureGame::AdventureGame(string name) {
 
 }
 
-Player AdventureGame::getPlayer() {
+Player AdventureGame::getPlayer() {    // Victoria
 
 }
 int AdventureGame::getRoomNumber() {
@@ -98,7 +98,7 @@ Room AdventureGame::getCurrentRoom() {
 
 }
 
-void AdventureGame::setPlayer(string name) {
+void AdventureGame::setPlayer(string name) {    // Victoira
 
 }
 Chest AdventureGame::getChest() {
@@ -110,10 +110,10 @@ void AdventureGame::generateRoom() {
 void AdventureGame::moveForward() {
 
 }
-void AdventureGame::useObject() {
+void AdventureGame::useObject() {    // Victoria
 
 }
-void AdventureGame::roomInteraction() {
+void AdventureGame::roomInteraction() {    // Victoria
 
 }
 void AdventureGame::wait() {
@@ -123,7 +123,7 @@ void AdventureGame::wait() {
 void AdventureGame::printNotice() {
 
 }
-void AdventureGame::printInventory() {
+void AdventureGame::printInventory() {    // Victoria
 
 }
 void AdventureGame::printHelp() {
