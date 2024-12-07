@@ -14,9 +14,9 @@
 using namespace std;
 
 struct Monster {
-string name;
-int health;
-int damage;
+    string name;
+    int health;
+    int damage;
 };
 
 struct Weapon {
@@ -32,6 +32,5 @@ struct Potion {
 
 int main(int argc, char const *argv[]) {
     // Load data into the appointments vector
-
 
 }
