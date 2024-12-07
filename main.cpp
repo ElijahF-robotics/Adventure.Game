@@ -1,6 +1,6 @@
 /**
 *    @file: appointment_main.cc
- *   @author: Elijah Flader
+ *   @author: Elijah Flader and Victoria Palozzi
  *   @date: Dec 7, 2024
  *   @brief:
  */
@@ -27,7 +27,20 @@ struct Weapon {
 struct Potion {
     int health;
     int damage;
-    double strength; // take damage of weapon and multiply it by strength
+    int strength; // take damage of weapon and multiply it by strength
+};
+
+struct Chest {
+Potion p;
+int coinCount;
+};
+
+struct Player {
+string name;
+vector <Potion> inventory;
+int health;
+int strength;
+Weapon w;
 };
 
 int main(int argc, char const *argv[]) {
