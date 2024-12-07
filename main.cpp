@@ -66,7 +66,7 @@ public:
     void roomInteraction();
     void wait();
 
-    void printNotice();
+    void printNotice(char select);
     void printInventory();
     void printHelp();
 
@@ -92,23 +92,24 @@ Player AdventureGame::getPlayer() {    // Victoria
 
 }
 int AdventureGame::getRoomNumber() {
-
+    return roomNumber;
 }
 Room AdventureGame::getCurrentRoom() {
-
+    return currentRoom;
 }
 
 void AdventureGame::setPlayer(string name) {    // Victoira
 
 }
 Chest AdventureGame::getChest() {
-
+    return currentRoom.c;
 }
 void AdventureGame::generateRoom() {
 
 }
 void AdventureGame::moveForward() {
-
+    generateRoom();
+    roomNumber++;
 }
 void AdventureGame::useObject() {    // Victoria
 
@@ -117,15 +118,73 @@ void AdventureGame::roomInteraction() {    // Victoria
 
 }
 void AdventureGame::wait() {
-
+    // If there's a monster, subtract from healh
+    if (currentRoom.m.health > 0) {
+          p.health -= currentRoom.m.damage;
+          cout << currentRoom.m.name << " did " << currentRoom.m.damage << " damage" << endl;
+    }
+    else {
+      cout << "You waited" << endl;
+    }
 }
 
-void AdventureGame::printNotice() {
+void AdventureGame::printNotice(char select) {
+    cout << left;
 
+    switch (select) {
+        case 'p':
+            cout << "Player:" << endl;
+            cout << "\t" << setw(15) << "Current Health" << ": " << p.health << endl;
+            cout << "\t" << setw(15) << "Strength" << ": " << p.strength << endl;
+            break;
+        case 'w':
+            cout << "Weapon:" << endl;
+            cout << "\t" << setw(15) << "Weapon" << ": " << p.w.name << endl;
+            cout << "\t" << setw(15) << "Damage" << ": " << p.w.damage << endl;
+            break;
+        case 'r':
+            cout << "Room:" << endl;
+            cout << "\tthis room contains a" << endl;
+
+            if (currentRoom.m.health > 0) {
+                Monster monster = currentRoom.m;
+                cout << monster.name << "with" << monster.health << "health that" << endl;
+                cout << "does" << monster.damage << "damage" << endl;
+            } else{
+                cout << "chest" << endl;
+            }
+            break;
+        default:
+            break;
+    }
 }
 void AdventureGame::printInventory() {    // Victoria
 
 }
 void AdventureGame::printHelp() {
-    
+    // --------------------------
+    // Help:
+    //     forward - Move forward through rooms
+    //     wait - Just sit there
+    //     use - Use one of your potions
+    //     interact - Interact with the chest, if there is one
+    //     attack - Attack! Wait, is there a monster?
+    //     inventory - Show the entire 2 potions you have
+    //     help - Get this screen
+	//
+    //     quit - Give up, because this is too difficult
+    // --------------------------
+
+    cout << "--------------------------" << endl;
+    cout << "Help:" << endl;
+    cout << "\tforward - Move forward through rooms" << endl;;
+    cout << "\twait - Just sit there" << endl;
+    cout << "\tuse - Use one of your potions" << endl;
+    cout << "\tinteract - Interact with the chest, if there is one" << endl;
+    cout << "\tattack - Attack! Wait, is there a monster?" << endl;
+    cout << "\tinventory - Show the entire 2 potions you have" << endl;
+    cout << "\thelp - Get this screen" << endl;
+    cout << endl;
+    cout << "\tquit - Give up, because this is too difficult" << endl;
+    cout << "--------------------------" << endl;
 }
