@@ -78,17 +78,20 @@ private:
 
 int main(int argc, char const *argv[]) {
     // Load data into the appointments vector
+    Monster m;
 
 }
 
 AdventureGame::AdventureGame() {    // Victoria
-
+p.health = 0;
 }
+
 AdventureGame::AdventureGame(string name) {
 
 }
 
-Player AdventureGame::getPlayer() {    // Victoria
+Player AdventureGame::getPlayer() {
+    return p;    // Victoria
 
 }
 int AdventureGame::getRoomNumber() {
@@ -98,8 +101,9 @@ Room AdventureGame::getCurrentRoom() {
 
 }
 
-void AdventureGame::setPlayer(string name) {    // Victoira
-
+void AdventureGame::setPlayer(string name) {
+p.name = name;
+   // Victoira
 }
 Chest AdventureGame::getChest() {
 
@@ -111,9 +115,40 @@ void AdventureGame::moveForward() {
 
 }
 void AdventureGame::useObject() {    // Victoria
+vector<Potion> invent = p.inventory;
+
+printInventory();
+
+cout << "Choose a potion in your inventory: " << endl;
+int selection;
+cin >> selection;
+
+while (selection < 0 || selection > invent.size() - 1) {
 
 }
-void AdventureGame::roomInteraction() {    // Victoria
+
+Potion p = invent.at(selection);
+
+if (p.health == 0 && p.damage == 0) {
+    // Change strength
+} 
+
+else if (p.health == 0 && p.strength == 0) {
+    // Change damage
+}
+
+else if (p.damage == 0 && p.strength == 0) {
+    // Change health
+}
+
+}
+void AdventureGame::roomInteraction() { 
+    if (monster.health > 0) {
+        monster.health -= p.health * p.strength;
+    }   // Victoria
+    if (monster.chest > 0) {
+        getChest();
+    }
 
 }
 void AdventureGame::wait() {
@@ -123,9 +158,13 @@ void AdventureGame::wait() {
 void AdventureGame::printNotice() {
 
 }
-void AdventureGame::printInventory() {    // Victoria
-
+void AdventureGame::printInventory() { 
+cout << "Potions: " << endl;  // Victoria
+    for (int i = 0; i < Inventory.size(); i++)
+        cout << Inventory[i] << " ";
+  
 }
+
 void AdventureGame::printHelp() {
 
 }
