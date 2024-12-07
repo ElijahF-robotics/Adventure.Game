@@ -127,5 +127,5 @@ void AdventureGame::printInventory() {
 
 }
 void AdventureGame::printHelp() {
-    
+
 }
